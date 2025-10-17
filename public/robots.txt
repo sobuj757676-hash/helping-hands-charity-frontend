@@ -1,0 +1,44 @@
+# Robots.txt for Helping Hands Charity
+# https://helpinghands.org/robots.txt
+
+User-agent: *
+Allow: /
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Disallow admin and auth pages
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Disallow duplicate content
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://helpinghands.org/sitemap.xml
+Sitemap: https://helpinghands.org/sitemap-news.xml
+Sitemap: https://helpinghands.org/sitemap-images.xml
