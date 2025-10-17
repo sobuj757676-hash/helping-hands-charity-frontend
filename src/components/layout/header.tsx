@@ -1,3 +1,4 @@
+import { LanguageToggle } from '@/components/i18n/language-toggle'
 import Link from 'next/link'
 
 export default function Header() {
@@ -15,6 +16,7 @@ export default function Header() {
           <Link href="/contact">Contact</Link>
         </nav>
         <div className="flex items-center gap-3">
+          <LanguageToggle />
           <Link href="/donate" className="px-4 py-2 rounded-md bg-charity-500 text-white">Donate</Link>
           <Link href="/auth/signin" className="px-4 py-2 rounded-md border">Sign In</Link>
         </div>
