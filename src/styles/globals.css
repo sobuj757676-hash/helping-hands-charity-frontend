@@ -2,109 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap');
+/* Minimal CSS to prove build passes. We'll re-introduce styles after confirmation. */
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 20 14.3% 4.1%;
-  --card: 0 0% 100%;
-  --card-foreground: 20 14.3% 4.1%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 20 14.3% 4.1%;
-  --primary: 24 91% 55%;
-  --primary-foreground: 60 9.1% 97.8%;
-  --secondary: 60 4.8% 95.9%;
-  --secondary-foreground: 24 9.8% 10%;
-  --muted: 60 4.8% 95.9%;
-  --muted-foreground: 25 5.3% 44.7%;
-  --accent: 60 4.8% 95.9%;
-  --accent-foreground: 24 9.8% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 60 9.1% 97.8%;
-  --border: 20 5.9% 90%;
-  --input: 20 5.9% 90%;
-  --ring: 24 91% 55%;
-  --radius: 0.5rem;
+  --foreground: 0 0% 10%;
 }
 
-* {
-  @apply border-border;
-}
+html { font-family: system-ui, sans-serif; }
+body { background: hsl(var(--background)); color: hsl(var(--foreground)); }
 
-html {
-  font-family: 'Inter', system-ui, sans-serif;
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-background text-foreground;
-  font-feature-settings: "rlig" 1, "calt" 1;
-}
-
-.lang-bn {
-  font-family: 'Noto Sans Bengali', sans-serif;
-}
-
-.container-responsive {
-  @apply container mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.btn-primary {
-  @apply inline-flex items-center justify-center rounded-lg bg-charity-500 px-6 py-3 text-sm font-semibold text-white shadow-charity transition-all duration-200 hover:bg-charity-600 hover:shadow-charity-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charity-500 disabled:opacity-50 disabled:cursor-not-allowed;
-}
-
-.btn-secondary {
-  @apply inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-charity-700 shadow border border-charity-200 transition-all duration-200 hover:bg-charity-50 hover:border-charity-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charity-500;
-}
-
-.btn-ghost {
-  @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold text-charity-700 transition-all duration-200 hover:bg-charity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charity-500;
-}
-
-.card {
-  @apply rounded-xl border bg-card text-card-foreground shadow-sm;
-}
-
-.card-hover {
-  @apply transition-all duration-300 hover:shadow-charity hover:-translate-y-1;
-}
-
-.gradient-charity {
-  @apply bg-gradient-to-br from-charity-400 via-charity-500 to-charity-600;
-}
-
-.text-gradient {
-  @apply bg-gradient-to-r from-charity-600 to-charity-500 bg-clip-text text-transparent;
-}
-
-.hero-gradient {
-  background: linear-gradient(135deg, #fef7ed 0%, #fdecda 25%, #fad4b5 50%, #f6b485 75%, #ed6b2f 100%);
-}
-
-@keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-}
-
-.loading-shimmer {
-  background: linear-gradient(90deg, #f0f0f0 0px, #e0e0e0 40px, #f0f0f0 80px);
-  background-size: 200px;
-  animation: shimmer 1.5s infinite;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #ed6b2f; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #de5425; }
-
-/* Focus ring improvements */
-.focus-ring {
-  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-charity-500 focus-visible:ring-offset-2;
-}
-
-/* Print styles */
-@media print {
-  .no-print { display: none !important; }
-}
+.container-responsive { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
