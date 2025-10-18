@@ -1,25 +1,90 @@
-import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import Image from 'next/image'
+import { EnvelopeIcon, LockClosedIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Sign In | Helping Hands',
 }
 
 export default function SignInPage() {
   return (
-    <div className="container-responsive py-12 max-w-md">
-      <h1 className="text-3xl font-bold mb-6">Sign In</h1>
-      <form className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium mb-1">Email</label>
-          <input className="border rounded-md px-3 py-2 w-full" type="email" />
+    <div className="min-h-screen grid lg:grid-cols-2">
+      {/* Left Visual Panel */}
+      <div className="relative hidden lg:block">
+        <Image
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop"
+          alt="Helping Hands"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-charity-600/40" />
+        <div className="absolute bottom-8 left-8 right-8 text-white">
+          <h2 className="text-3xl font-bold mb-2">Welcome Back</h2>
+          <p className="text-white/90 max-w-lg">
+            Continue your journey of making a difference. Your contributions create real impact across Bangladesh.
+          </p>
         </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Password</label>
-          <input className="border rounded-md px-3 py-2 w-full" type="password" />
+      </div>
+
+      {/* Right Form Panel */}
+      <div className="flex items-center justify-center p-6 lg:p-12">
+        <div className="w-full max-w-md">
+          <div className="text-center mb-8">
+            <Link href="/" className="inline-flex items-center gap-2 text-charity-600 font-semibold">
+              <span className="text-xl">🤝</span> Helping Hands
+            </Link>
+            <h1 className="text-3xl font-bold mt-3">Sign in to your account</h1>
+            <p className="text-gray-600">Access your dashboard to continue helping others</p>
+          </div>
+
+          {/* Social Login */}
+          <div className="space-y-3">
+            <Button variant="outline" className="w-full flex items-center justify-center gap-3">
+              <Image src="/google.svg" alt="Google" width={18} height={18} />
+              Continue with Google
+            </Button>
+          </div>
+
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center"><span className="w-full border-t" /></div>
+            <div className="relative flex justify-center text-sm"><span className="bg-white px-2 text-gray-500">or continue with email</span></div>
+          </div>
+
+          <Card>
+            <CardContent className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">Email</label>
+                <div className="relative">
+                  <EnvelopeIcon className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Input type="email" placeholder="you@example.com" className="pl-10" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Password</label>
+                <div className="relative">
+                  <LockClosedIcon className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Input type="password" placeholder="••••••••" className="pl-10" />
+                </div>
+                <div className="text-right mt-2">
+                  <Link href="/auth/forgot" className="text-sm text-charity-600 hover:underline">Forgot password?</Link>
+                </div>
+              </div>
+              <Button className="w-full group">
+                Sign In
+                <ArrowRightIcon className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </CardContent>
+          </Card>
+
+          <p className="text-sm text-gray-600 mt-4 text-center">
+            Don’t have an account? <Link href="/auth/signup" className="text-charity-600 underline">Sign up</Link>
+          </p>
         </div>
-        <button className="w-full px-4 py-2 rounded-md bg-charity-500 text-white">Sign In</button>
-      </form>
-      <p className="text-sm text-gray-600 mt-4">Don’t have an account? <a href="/auth/signup" className="text-charity-600 underline">Sign up</a></p>
+      </div>
     </div>
   )
 }
