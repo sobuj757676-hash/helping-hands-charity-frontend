@@ -1,1 +1,1 @@
-export { default } from './page-impl'
+export { default } from './page'
