@@ -1,1 +1,1 @@
-export { default } from '../programs/[slug]/page'
+export { default } from '../../../programs/[slug]/page-impl'

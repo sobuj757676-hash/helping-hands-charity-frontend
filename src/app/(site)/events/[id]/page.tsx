@@ -1,1 +1,1 @@
-export { default } from '../events/[id]/page'
+export { default } from '../../../events/[id]/page-impl'

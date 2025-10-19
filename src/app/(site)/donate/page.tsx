@@ -1,1 +1,1 @@
-export { default } from '../donate/page'
+export { default } from '../../donate/page-impl'

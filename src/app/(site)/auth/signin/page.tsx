@@ -1,1 +1,1 @@
-export { default } from '../auth/signin/page'
+export { default } from '../../../auth/signin/page-impl'

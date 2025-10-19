@@ -1,1 +1,1 @@
-export { default } from '../stories/[slug]/page'
+export { default } from '../../../stories/[slug]/page-impl'
